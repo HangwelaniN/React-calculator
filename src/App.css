@@ -1,3 +1,45 @@
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #eadedb 0%, #bc70a4 50%, #aae8f5);
+}
+
+.display {
+  box-sizing: border-box;
+  padding: 15px;
+  height: 100px;
+  color: white;
+  font-size: 24px;
+  border: none;
+  background-color: rgb(34, 34, 34, 0.2);
+  text-align: right;
+}
+.calculator {
+  padding: 10px 0px;
+  background-color: rgb(34, 34, 34, 0.289);
+  backdrop-filter: blur(30px);
+}
+.calculator input {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 60px;
+  width: 60px;
+  font: 20px sans-serif;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #53c8df;
+  border-radius: 50%;
+  box-shadow: rgb(0, 0, 0, 0.5);
+}
+.calculator .equal {
+  width: 150px;
+  border-radius: 40px;
+  background-color: #53c8df;
+}
+.calculator .color {
+  background-color: #53c8df;
 }
