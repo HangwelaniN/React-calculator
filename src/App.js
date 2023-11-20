@@ -1,39 +1,64 @@
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [results, setResults] = useState("");
+
+  const value = (e) => {
+    setResults(results + e.target.value);
+  };
+
+  const handleEqualClick = () => {
+    setResults(eval(results));
+  };
+
   return (
     <div className="App">
       <div className="main">
-        <div className="display ">00</div>
-
+        <div className="display ">{results}</div>
         <div className="calculator">
-          <input type="Button" className="color" value="AC" />
-          <input type="Button" className="color" value="DE" />
-          <input type="Button" className="color" value="." />
-          <input type="Button" className="color" value="/" />
+          <input
+            type="button"
+            className="color"
+            value="AC"
+            onClick={(e) => setResults("")}
+          />
+          <input
+            type="button"
+            className="color"
+            value="DE"
+            onClick={(e) => setResults(results.slice(0, -1))}
+          />
+          <input type="button" className="color" value="." onClick={value} />
+          <input type="button" className="color" value="/" onClick={value} />
         </div>
         <div className="calculator">
-          <input type="Button" value="7" />
-          <input type="Button" value="8" />
-          <input type="Button" value="9" />
-          <input type="Button" className="color" value="*" />
+          <input type="button" value="7" onClick={value} />
+          <input type="button" value="8" onClick={value} />
+          <input type="button" value="9" onClick={value} />
+          <input type="button" className="color" value="*" onClick={value} />
         </div>
         <div className="calculator">
-          <input type="Button" value="4" />
-          <input type="Button" value="5" />
-          <input type="Button" value="6" />
-          <input type="Button" className="color" value="-" />
+          <input type="button" value="4" onClick={value} />
+          <input type="button" value="5" onClick={value} />
+          <input type="button" value="6" onClick={value} />
+          <input type="button" className="color" value="-" onClick={value} />
         </div>
         <div className="calculator">
-          <input type="Button" value="1" />
-          <input type="Button" value="2" />
-          <input type="Button" value="3" />
-          <input type="Button" className="color" value="+" />
+          <input type="button" value="1" onClick={value} />
+          <input type="button" value="2" onClick={value} />
+          <input type="button" value="3" onClick={value} />
+          <input type="button" className="color" value="+" onClick={value} />
         </div>
         <div className="calculator">
-          <input type="Button" value="0" />
-          <input type="Button" value="00" />
-          <input type="Button" className="equal" value="=" />
+          <input type="button" value="0" onClick={value} />
+          <input type="button" value="00" onClick={value} />
+          <input
+            type="button"
+            className="equal"
+            value="="
+            onClick={handleEqualClick}
+          />
         </div>
       </div>
     </div>

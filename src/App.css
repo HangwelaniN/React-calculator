@@ -35,6 +35,9 @@
   border-radius: 50%;
   box-shadow: rgb(0, 0, 0, 0.5);
 }
+.calculator input:hover {
+  background-color: #53c8df;
+}
 .calculator .equal {
   width: 150px;
   border-radius: 40px;
@@ -42,4 +45,7 @@
 }
 .calculator .color {
   background-color: #53c8df;
+}
+.calculator .color:hover {
+  background-color: transparent;
 }
